@@ -1,6 +1,7 @@
 import openpyxl as op
 from openpyxl.styles import Font, PatternFill, Alignment
 
+
 def format_excel(file_path: str, validator: str) -> None:
     workbook = op.load_workbook(file_path)
     sheet = workbook.active
@@ -51,24 +52,30 @@ def format_excel(file_path: str, validator: str) -> None:
             sheet.cell(row=1, column=col).fill = header_fill_yellow
             sheet.cell(row=1, column=col).font = header_font_white
     
-    elif validator == 'react':
+    elif validator == 'multi_final':
         for col in range(1, 10):  # Columnas A-I
             sheet.cell(row=1, column=col).fill = header_fill_blue
-        for col in range(10, 14):  # Columnas J-M
-            sheet.cell(row=1, column=col).fill = header_fill_yellow
-            sheet.cell(row=1, column=col).font = header_font_white
-        for col in range(14, 16):  # Columnas N-O
+        for col in range(10, 12):  # Columnas J-K
             sheet.cell(row=1, column=col).fill = header_fill_green
+            sheet.cell(row=1, column=col).font = header_font_white
+        for col in range(12, 16):  # Columnas L-P
+            sheet.cell(row=1, column=col).fill = header_fill_yellow
             sheet.cell(row=1, column=col).font = header_font_white
         for col in range(16, 17):  # Columna P
             sheet.cell(row=1, column=col).fill = header_fill_orange
             sheet.cell(row=1, column=col).font = header_font_white
     
-    elif validator == 'no_env':
+    elif validator == 'instruccion':
         for col in range(1, 11): # Columnas A-J
             sheet.cell(row=1, column=col).fill = header_fill_blue
-        for col in range(11, 15): # Columnas K-N
+        for col in range(11, 13): # Columnas K-L
+            sheet.cell(row=1, column=col).fill = header_fill_green
+            sheet.cell(row=1, column=col).font = header_font_white
+        for col in range(13, 17):  # Columnas M-P
             sheet.cell(row=1, column=col).fill = header_fill_yellow
+            sheet.cell(row=1, column=col).font = header_font_white
+        for col in range(17, 18):  # Columna Q
+            sheet.cell(row=1, column=col).fill = header_fill_orange
             sheet.cell(row=1, column=col).font = header_font_white
     
     workbook.save(file_path)
