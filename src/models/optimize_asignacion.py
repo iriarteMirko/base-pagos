@@ -2,9 +2,22 @@ from tkinter import messagebox
 import pandas as pd
 
 
-def optimizar_asignacion(asignacion_path: str, asignacion_final: str) -> None:
+def optimize_asignacion(asignacion_inicial: str, asignacion_final: str) -> None:
+    """
+    Optimiza la base de asignación y guarda el resultado en un archivo Excel.
+    Carga la base de asignación desde 'asignacion_inicial', realiza transformaciones y optimizaciones,
+    y guarda el resultado en 'asignacion_final'. Muestra mensajes de información sobre la forma inicial y final
+    del DataFrame, y maneja errores mostrando un mensaje de error.
+    
+    Parámetros:
+    asignacion_inicial (str): Ruta del archivo Excel original.
+    asignacion_final (str): Ruta del archivo Excel optimizado.
+    
+    Retorna:
+    None
+    """
     try:
-        df_asignacion = pd.read_excel(asignacion_path)
+        df_asignacion = pd.read_excel(asignacion_inicial)
         shape_inicial = str(df_asignacion.shape)
         
         columnas = [col.upper() for col in df_asignacion.columns]

@@ -1,17 +1,27 @@
 from datetime import datetime
 import os
 
-def validar_o_crear_carpeta() -> str:
-    fecha_hoy = datetime.today().strftime('%Y.%m.%d')
+def validate_or_create_folder() -> str:
+    """
+    Valida o crea una carpeta con la fecha de hoy y una subcarpeta 'agencias'.
     
-    carpeta_reporte = 'reporte'
+    Este método verifica si existe una carpeta con la fecha de hoy dentro de una carpeta 'reporte'.
+    Si no existe, la crea junto con una subcarpeta llamada 'agencias'. Finalmente, retorna la ruta
+    de la carpeta creada o validada.
     
-    carpeta_hoy = os.path.join(carpeta_reporte, fecha_hoy)
+    Retorna:
+    str: La ruta de la carpeta creada o validada.
+    """
+    today_date = datetime.today().strftime('%Y.%m.%d')
     
-    if not os.path.exists(carpeta_hoy):
-        os.makedirs(carpeta_hoy)
+    report_folder = 'reporte'
     
-    if not os.path.exists(carpeta_hoy+'/agencias'):
-        os.makedirs(carpeta_hoy+'/agencias')
+    today_folder = os.path.join(report_folder, today_date)
     
-    return carpeta_hoy
+    if not os.path.exists(today_folder):
+        os.makedirs(today_folder)
+    
+    if not os.path.exists(today_folder+'/agencias'):
+        os.makedirs(today_folder+'/agencias')
+    
+    return today_folder

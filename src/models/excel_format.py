@@ -2,7 +2,17 @@ import openpyxl as op
 from openpyxl.styles import Font, PatternFill, Alignment
 
 
-def format_excel(file_path: str, validator: str) -> None:
+def excel_format(file_path: str, validator: str) -> None:
+    """
+    Formatea un archivo Excel aplicando estilos según el validador.
+    
+    Parámetros:
+    file_path (str): La ruta del archivo Excel que se desea formatear.
+    validator: Una función u objeto que determina las reglas de formato que se deben aplicar.
+    
+    Retorna:
+    None
+    """
     workbook = op.load_workbook(file_path)
     sheet = workbook.active
     
