@@ -13,4 +13,4 @@ def clean_columns(columns_list: list[str]) -> list[str]:
     Retorna:
     list[str]: Una lista de nombres de columnas limpios.
     """
-    return [column.strip().replace('  ', ' ').replace('  ', ' ').replace(' ', '_').upper() for column in columns_list]
+    return [column.strip().replace('  ', ' ').replace('  ', ' ').replace('.', '').replace(' ', '_').upper() for column in columns_list]
