@@ -1,5 +1,3 @@
-# crea una funcion que reciba como argumento una lista (del nombre de las columnas) y retorne la lista de las columnas depuradas, debe cambiar todo a mayusculas y quitar espacios en blanco al inicio y al final de cada nombre de columna.
-
 def clean_columns(columns_list: list[str]) -> list[str]:
     """
     Limpia los nombres de las columnas de una lista.
