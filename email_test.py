@@ -2,7 +2,7 @@ from gmail_sender import GmailSender
 from dotenv import load_dotenv
 import os
 
-class CorreoMultiproducto:
+class EmailTest:
     def __init__(self, fecha: str, file_path: str, hora_formateada: str):
         load_dotenv()
         self.fecha = fecha
@@ -10,8 +10,8 @@ class CorreoMultiproducto:
         self.hora_formateada = hora_formateada
         self.sender_email = os.getenv('GMAIL')
         self.password = os.getenv('PASSWORD')
-        self.recipients_emails = os.getenv('MULTIPRODUCTO').split(', ')
-        self.cc_emails = os.getenv('CC_MULTIPRODUCTO').split(', ')
+        self.recipients_emails = os.getenv('MULTIPRODUCTO_test').split(', ')
+        self.cc_emails = os.getenv('CC_MULTIPRODUCTO_test').split(', ')
         self.gmail_sender = GmailSender(self.sender_email, self.password)
     
     def enviar_correo(self):

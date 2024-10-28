@@ -11,4 +11,4 @@
 </p>
 <p>Por favor cruzar por código central y enviar en el horario, de lo contrario no se enviará la instrucción y perjudicamos al cliente.</p>
 <p><span style="background-color: cyan;">Por favor que los contratos estén completos y <strong>"SIN ESPACIOS"</strong></span></p>
-<p><strong>Plazo máximo de entrega: {{ hora }}</strong></p>
+<p><strong>Plazo máximo de entrega: {% if hora %}{{ hora }}{% else %}{{ '00:00' }}{% endif %}</strong></p>
