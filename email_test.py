@@ -24,7 +24,7 @@ class EmailTest:
 
 
 def main():
-    file_path = 'C://Users//p042833//Documents//GitHub//base-pagos//src//test//test_file.txt'
+    file_path = 'src/test/test_file.txt'
     email_test = EmailTest(file_path)
     email_test.enviar_correo()
 
