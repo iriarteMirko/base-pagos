@@ -25,8 +25,8 @@ class CorreoMultiproducto:
         files = [f'{self.file_path}/MULTIPRODUCTO {self.fecha}.xlsx', ]
         
         if self.flag_reactiva:
-            files =+ [f'{self.file_path}/REACTIVA {self.fecha}.xlsx']
+            files.append(f'{self.file_path}/REACTIVA {self.fecha}.xlsx')
             
-        print('Archivos adjuntos:', len(files))
+        print('Archivos adjuntos:', files)
         
         self.gmail_sender.send_email(recipient_emails=self.recipients_emails, subject=subject, body=body, cc_emails=self.cc_emails, files=files)
